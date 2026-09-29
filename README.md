@@ -1,6 +1,6 @@
 # Hotel Landing Page
 
-Public-facing single-page website for a hotel/accommodation business.
+Public-facing single-page website for a hotel/accommodation business, with reservation inquiries initiated through a WhatsApp form flow.
 
 ## Current status
 

@@ -23,7 +23,7 @@ Do not mark a task `DONE` without verification.
 - [ ] T0.5 Configure `.gitignore`.
 - [ ] T0.6 Add `.env.example` if/when environment variables are required.
 - [ ] T0.7 Decide deployment provider.
-- [ ] T0.8 Decide contact email delivery approach.
+- [ ] T0.8 Configure hotel WhatsApp number and final hotel name for reservation inquiries.
 - [ ] T0.9 Create initial README for developers.
 
 ---
@@ -70,11 +70,11 @@ Blocked until design handoff is complete.
 # Phase 3 — Functional behavior
 
 - [ ] T3.1 Implement navigation between landing sections.
-- [ ] T3.2 Implement contact form field validation.
-- [ ] T3.3 Implement contact email delivery.
-- [ ] T3.4 Implement sending state.
-- [ ] T3.5 Implement success feedback.
-- [ ] T3.6 Implement error feedback.
+- [ ] T3.2 Implement reservation inquiry form field validation.
+- [ ] T3.3 Implement WhatsApp prefilled-message generation and redirect.
+- [ ] T3.4 Implement redirecting state.
+- [ ] T3.5 Implement validation feedback.
+- [ ] T3.6 Verify malformed or missing WhatsApp configuration is handled safely.
 - [ ] T3.7 Configure Google rating/review values.
 - [ ] T3.8 Configure Google Reviews external URL.
 - [ ] T3.9 Ensure external reviews link opens in new tab.
@@ -98,9 +98,9 @@ Blocked until design handoff is complete.
 ## Functional QA
 
 - [ ] T5.1 Verify all navigation.
-- [ ] T5.2 Verify contact validation.
-- [ ] T5.3 Verify email delivery.
-- [ ] T5.4 Verify loading/success/error states.
+- [ ] T5.2 Verify reservation inquiry validation.
+- [ ] T5.3 Verify WhatsApp message generation and destination.
+- [ ] T5.4 Verify redirecting/error states.
 - [ ] T5.5 Verify Google Reviews link.
 - [ ] T5.6 Verify all external links.
 
@@ -137,7 +137,7 @@ Blocked until design handoff is complete.
 - [ ] T6.6 Deploy production build.
 - [ ] T6.7 Connect domain.
 - [ ] T6.8 Verify HTTPS.
-- [ ] T6.9 Test production contact form.
+- [ ] T6.9 Test production WhatsApp reservation inquiry flow.
 - [ ] T6.10 Test production external links.
 - [ ] T6.11 Final client review.
 - [ ] T6.12 Resolve approved final issues.
@@ -162,8 +162,7 @@ A task is done when:
 The initial project is done when:
 
 - approved sections are implemented,
-- contact form works in production,
-- email delivery works,
+- WhatsApp reservation inquiry form works in production,
 - Google Reviews link is correct,
 - responsive behavior is approved,
 - implementation matches approved Figma,

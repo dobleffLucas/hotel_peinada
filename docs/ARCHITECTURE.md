@@ -50,7 +50,7 @@ The implementation should support:
 - responsive design,
 - structured content,
 - image optimization,
-- contact form integration.
+- WhatsApp reservation inquiry form integration.
 
 Do not initialize a final framework until the human owner confirms the stack.
 
@@ -60,26 +60,15 @@ Status: `PENDING / MINIMAL`
 
 A traditional backend is not currently required.
 
-Some server-side or serverless capability may be needed only for contact email delivery, depending on the chosen provider.
+The initial WhatsApp inquiry flow can be implemented client-side by generating the configured WhatsApp link and its encoded prefilled message. No server-side delivery mechanism is required.
 
-## Contact email architecture
+The hotel's WhatsApp number and final hotel name remain configuration values pending confirmation.
 
-Status: `PENDING`
+## WhatsApp reservation inquiry architecture
 
-Potential patterns include:
-- hosted form provider,
-- serverless function,
-- transactional email provider,
-- framework-native server endpoint.
+Status: `CONFIRMED AT HIGH LEVEL`
 
-Selection criteria should include:
-- security,
-- reliability,
-- maintenance burden,
-- cost,
-- hosting compatibility.
-
-Do not expose private email API credentials in client-side code.
+The form constructs the WhatsApp deep link client-side. The final number must be configured outside the message-generation logic. No API credentials are required for this flow.
 
 ## Google Reviews architecture
 

@@ -12,7 +12,7 @@ The final Figma design is still pending.
 
 ## Primary objective
 
-Present the accommodation, its identity, rooms/units, services and visual content clearly, and convert visitors into direct inquiries through a contact form.
+Present the accommodation, its identity, rooms/units, services and visual content clearly, and convert visitors into direct reservation inquiries through a WhatsApp form flow.
 
 ## Product type
 
@@ -42,26 +42,30 @@ The final order, visual hierarchy and composition may change based on Figma.
 
 Status: `CONFIRMED`
 
-The primary CTA is the contact form.
+The primary CTA is a reservation inquiry form that redirects the visitor to the hotel's WhatsApp conversation with a prefilled message.
 
-## Contact form
+## Reservation inquiry form
 
 Status: `CONFIRMED FUNCTIONALLY`
 
 Fields:
 
 - Name
-- Phone
 - Email
-- Message
+- Check-in date
+- Check-out date
+- Number of adults
+- Number of minors
+- Preference / assistance request
 
 Expected behavior:
 
 - Visitor completes the form.
-- The inquiry is sent to the hotel by email.
+- The site opens the hotel's WhatsApp conversation with a message prefilled from the submitted fields.
+- The visitor sends the WhatsApp message from WhatsApp.
 - No database persistence is currently required.
 
-The final email provider / delivery mechanism is pending.
+The hotel's WhatsApp number and the final hotel name used in the message are pending.
 
 ## Google Reviews
 
@@ -146,8 +150,8 @@ Keep it in the structural plan unless later removed.
 - Services section.
 - Gallery.
 - Google Reviews presentation and external link.
-- Contact form.
-- Email-based contact flow.
+- Reservation inquiry form.
+- WhatsApp-based inquiry flow.
 - Footer.
 - Basic SEO.
 - Deployment / production release.
@@ -164,8 +168,6 @@ Status: `OUT OF SCOPE`
 - Online payments.
 - CMS.
 - Promotions section.
-- Floating WhatsApp button.
-- WhatsApp contact flow.
 - Automatic Google Reviews synchronization.
 
 Any of these items require explicit approval before implementation.

@@ -21,18 +21,21 @@ Current project needs do not justify a multi-page application.
 
 ---
 
-## DEC-002 — Primary conversion through contact form
+## DEC-002 — Primary conversion through WhatsApp reservation inquiry form
 
 Status: `ACCEPTED`
 
 Decision:
-The primary CTA will be direct contact through a form.
+The primary CTA will be a reservation inquiry form that opens the hotel's WhatsApp conversation with a prefilled message. The visitor sends the message from WhatsApp.
 
 Form fields:
 - Name
-- Phone
 - Email
-- Message
+- Check-in date
+- Check-out date
+- Number of adults
+- Number of minors
+- Preference / assistance request
 
 ---
 
@@ -48,14 +51,14 @@ Current requirement is only to send inquiries to the hotel by email.
 
 ---
 
-## DEC-004 — No WhatsApp in initial scope
+## DEC-004 — Scoped WhatsApp reservation inquiry flow
 
 Status: `ACCEPTED`
 
 Decision:
-Do not add a floating WhatsApp button or WhatsApp flow in the initial version.
+Include only the WhatsApp reservation inquiry flow defined in DEC-002.
 
-May be reconsidered later.
+Do not add a floating WhatsApp button or any other WhatsApp flow in the initial version.
 
 ---
 
@@ -127,7 +130,6 @@ The following have not been approved yet:
 
 - final frontend stack,
 - hosting provider,
-- contact email provider/mechanism,
 - final room/unit content model,
 - gallery interaction,
 - exact breakpoint strategy,
@@ -136,3 +138,5 @@ The following have not been approved yet:
 - final domain configuration,
 - exact SEO metadata,
 - animation/motion strategy.
+- hotel WhatsApp number,
+- final hotel name for the WhatsApp message.

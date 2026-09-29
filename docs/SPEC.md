@@ -178,34 +178,54 @@ Not allowed:
 
 ---
 
-# 9. Contact
+# 9. Reservation inquiries
 
-## SPEC-011 — Contact form fields
+## SPEC-011 — Reservation inquiry form fields
 
 Status: `CONFIRMED`
 
 The form must contain:
 
 - Name
-- Phone
 - Email
-- Message
+- Check-in date
+- Check-out date
+- Number of adults
+- Number of minors
+- Preference / assistance request
 
-## SPEC-012 — Contact delivery
+## SPEC-012 — WhatsApp inquiry flow
 
 Status: `CONFIRMED FUNCTIONAL INTENT`
 
-Submitting the form must send the inquiry to the hotel by email.
+Submitting the form must open a WhatsApp conversation to the hotel's configured number with a prefilled inquiry message.
 
-Status: `PENDING TECHNICAL DECISION`
+The visitor must send the prefilled message from WhatsApp; the site must not attempt to send a WhatsApp message automatically.
 
-The email delivery mechanism has not been chosen yet.
+The prefilled message must follow this structure, with submitted values substituted:
+
+```text
+Hola, quiero consultar por una reserva en el hotel {hotelName}.
+
+Nombre: {name}
+Mail: {email}
+Ingreso: {checkInDate}
+Egreso: {checkOutDate}
+Mayores: {adults}
+Menores: {minors}
+Preferencia: {preference}
+```
+
+Status: `PENDING CONFIGURATION`
+
+- hotel WhatsApp number,
+- final hotel name.
 
 ## SPEC-013 — Database
 
 Status: `OUT OF SCOPE`
 
-The initial contact flow must not require a database.
+The initial reservation inquiry flow must not require a database.
 
 ## SPEC-014 — Form validation
 
@@ -218,8 +238,11 @@ Exact validation rules are pending technical implementation.
 At minimum, implementation should consider:
 - required fields,
 - valid email format,
-- sensible message length,
-- basic protection against accidental duplicate/spam submissions.
+- valid check-in and check-out dates,
+- check-out date later than check-in date,
+- non-negative guest counts,
+- at least one adult,
+- basic protection against accidental duplicate submissions.
 
 Do not add complex anti-abuse infrastructure unless required.
 
@@ -227,12 +250,11 @@ Do not add complex anti-abuse infrastructure unless required.
 
 Status: `CONFIRMED FUNCTIONALLY`
 
-The user must receive visible feedback after attempting to send the form.
+The user must receive visible feedback after attempting to continue to WhatsApp.
 
 States should include:
-- sending,
-- success,
-- error.
+- ready/redirecting,
+- error when form validation prevents the redirect.
 
 Exact visual treatment is defined by Figma.
 
@@ -242,15 +264,15 @@ Exact visual treatment is defined by Figma.
 
 ## SPEC-016 — WhatsApp
 
+Status: `CONFIRMED FUNCTIONALLY`
+
+The initial version includes a WhatsApp-based reservation inquiry form.
+
 Status: `OUT OF SCOPE`
 
-The initial version does not include:
-
-- floating WhatsApp button,
-- WhatsApp CTA,
-- automatic WhatsApp message generation.
-
-May be added later with explicit approval.
+- Floating WhatsApp button.
+- Any WhatsApp flow beyond the reservation inquiry form.
+- Automatic WhatsApp message sending.
 
 ---
 
@@ -328,8 +350,8 @@ The initial project is functionally complete when:
 
 - all approved sections exist,
 - navigation works,
-- contact form works,
-- email delivery works,
+- reservation inquiry form works,
+- WhatsApp message is populated correctly and opens the configured hotel conversation,
 - Google Reviews CTA opens the correct destination,
 - responsive behavior is approved,
 - implementation matches approved Figma,
